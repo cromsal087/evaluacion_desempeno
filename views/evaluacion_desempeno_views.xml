@@ -1,0 +1,84 @@
+<odoo>
+
+<!-- Formulario: Eliminando la ñ de nombres e identificadores -->
+<record id="view_evaluacion_desempeno_form" model="ir.ui.view">
+    <field name="name">evaluacion.desempeno.form</field>
+    <field name="model">evaluacion.desempeno</field>
+    <field name="arch" type="xml">
+        <form string="Desempeño">
+            <sheet>
+                <group>
+                    <field name="title"/>
+                    <field name="employee"/>
+                    <field name="date"/>
+                    <field name="score"/>
+                    <field name="state"/>
+                </group>
+                <group>
+                    <field name="comments" widget="text"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<!-- Vista Kanban: Sin ñ en nombres e identificadores -->
+<record id="view_evaluacion_desempeno_kanban" model="ir.ui.view">
+    <field name="name">evaluacion.desempeno.kanban</field>
+    <field name="model">evaluacion.desempeno</field>
+    <field name="arch" type="xml">
+        <kanban>
+            <field name="title"/>
+             <field name="employee"/>
+            <field name="date"/>
+            <field name="comments"/>
+            <field name="score"/>
+            <field name="state"/>
+            <templates>
+                <t t-name="kanban-box">
+                    <div class="oe_kanban_global_click">
+                        <div class="o_kanban_record_top">
+                            <strong><span t-esc="record.title.value"/></strong>
+                        </div>
+                        <div class="o_kanban_record_body">
+                            <div>Fecha: <span t-esc="record.date.value or 'Sin Fecha'"/></div>
+                            <div>Empleado: <span t-esc="record.employee.value"/></div>
+                            <div>Comentarios: <span t-esc="record.comments.value"/></div>
+                            <div>Puntuación: <span t-esc="record.score.value"/></div>
+                            <div>Estado: <span t-esc="record.state.value"/></div>
+                        </div>
+                    </div>
+                </t>
+            </templates>
+        </kanban>
+    </field>
+</record>
+
+<!-- Acción de ventana:-->
+<record id="action_evaluacion_desempeno" model="ir.actions.act_window">
+    <field name="name">Evaluacion de Desempeño</field>
+    <field name="res_model">evaluacion.desempeno</field>
+    <field name="view_mode">kanban,form,tree</field>
+    <field name="help" type="html">
+        <p>
+            Gestione y realice un seguimiento del desempeño de los empleados
+        </p>
+    </field>
+</record>
+
+<!-- Menús: -->
+<menuitem 
+    id="menu_evaluacion_desempeno_root"
+    name="Evaluaciones de Desempeño"
+    sequence="10"
+    web_icon="evaluacion_desempeno,static/description/iconodesempeno.png"/>
+
+<menuitem 
+    id="menu_evaluacion_desempeno"
+    name="Evaluaciones"
+    parent="menu_evaluacion_desempeno_root"
+    action="action_evaluacion_desempeno"
+    sequence="10"/>
+
+</odoo>
+

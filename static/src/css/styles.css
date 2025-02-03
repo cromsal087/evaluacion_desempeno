@@ -1,0 +1,57 @@
+.evaluacion_desempeno_kanban {
+    display: flex;
+    flex-direction: column;
+    padding: 10px; /* Internal padding */
+    margin: 5px; /* Separation between cards */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    max-width: 280px; /* Maximum width control */
+    min-height: 140px; /* Minimum height control */
+}
+
+.evaluacion_desempeno_kanban > div {
+    margin-bottom: 5px; /* Small margin between fields */
+    font-size: 14px; /* Field font size */
+}
+
+.evaluacion_desempeno_kanban > div:first-child {
+    background-color: #3f51b5; /* Odoo purple-blue */
+    color: white; /* Ensure text visibility */
+    padding: 10px; /* Add padding for full background coverage */
+    border-radius: 4px; /* Rounded corners for background */
+}
+
+.evaluacion_desempeno_kanban strong {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.evaluacion_desempeno_kanban .btn {
+    font-size: 12px; /* Button text size */
+    padding: 5px 10px; /* Button padding */
+    margin-top: 5px; /* Add some top margin to buttons */
+}
+
+.evaluacion_desempeno_kanban span {
+    font-size: 14px;
+}
+
+/* Additional styling for state indicators */
+.evaluacion_desempeno_kanban .state {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.evaluacion_desempeno_kanban .state-pending {
+    color: #ff9800; /* Orange for pending state */
+}
+
+.evaluacion_desempeno_kanban .state-in_progress {
+    color: #2196f3; /* Blue for in progress state */
+}
+
+.evaluacion_desempeno_kanban .state-done {
+    color: #4caf50; /* Green for done state */
+}

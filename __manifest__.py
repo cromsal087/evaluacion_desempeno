@@ -13,10 +13,9 @@
         'security/ir.model.access.csv',
     ],
 
-    
     'assets': {
         'web.assets_backend': [
-            '/evaluacion_desempeno/static/src/css/styles.css',
+            'evaluacion_desempeno/static/src/css/styles.css',  # Note la eliminación del slash inicial
         ],
     },
     'application': True,

@@ -1,73 +1,71 @@
-.evaluacion_desempeno_kanban {
+/* Estilos para el contenedor principal del kanban */
+.o_kanban_record {
     display: flex;
     flex-direction: column;
     padding: 10px;
-    /* Internal padding */
     margin: 5px;
-    /* Separation between cards */
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #fff;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     max-width: 280px;
-    /* Maximum width control */
     min-height: 140px;
-    /* Minimum height control */
 }
 
-.evaluacion_desempeno_kanban>div {
-    margin-bottom: 5px;
-    /* Small margin between fields */
-    font-size: 14px;
-    /* Field font size */
-}
-
-.evaluacion_desempeno_kanban>div:first-child {
+/* Estilos para la parte superior del registro kanban */
+.o_kanban_record_top {
     background-color: #3f51b5;
-    /* Odoo purple-blue */
     color: white;
-    /* Ensure text visibility */
     padding: 10px;
-    /* Add padding for full background coverage */
     border-radius: 4px;
-    /* Rounded corners for background */
+    margin-bottom: 10px;
 }
 
-.evaluacion_desempeno_kanban strong {
+/* Estilos para el cuerpo del registro kanban */
+.o_kanban_record_body {
+    padding: 5px;
+}
+
+.o_kanban_record_body > div {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* Estilos para títulos y texto fuerte */
+.o_kanban_record_top strong {
     font-size: 16px;
     font-weight: bold;
+    display: block;
 }
 
-.evaluacion_desempeno_kanban .btn {
-    font-size: 12px;
-    /* Button text size */
-    padding: 5px 10px;
-    /* Button padding */
-    margin-top: 5px;
-    /* Add some top margin to buttons */
-}
-
-.evaluacion_desempeno_kanban span {
+/* Estilos para los campos de texto */
+.o_kanban_record_body span {
     font-size: 14px;
+    color: #666;
 }
 
-/* Additional styling for state indicators */
-.evaluacion_desempeno_kanban .state {
+/* Estilos específicos para estados */
+.o_kanban_record_body div:last-child span {
     font-weight: bold;
     text-transform: uppercase;
 }
 
-.evaluacion_desempeno_kanban .state-pending {
+/* Colores específicos para cada estado */
+.o_kanban_record_body div:last-child span[data-value="pending"] {
     color: #ff9800;
-    /* Orange for pending state */
 }
 
-.evaluacion_desempeno_kanban .state-in_progress {
+.o_kanban_record_body div:last-child span[data-value="in_progress"] {
     color: #2196f3;
-    /* Blue for in progress state */
 }
 
-.evaluacion_desempeno_kanban .state-done {
+.o_kanban_record_body div:last-child span[data-value="done"] {
     color: #4caf50;
-    /* Green for done state */
+}
+
+/* Estilos para el hover */
+.oe_kanban_global_click:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    transition: all 0.2s ease;
 }
